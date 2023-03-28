@@ -10,7 +10,7 @@ namespace Gazi.EmlakciAppSube2
             var evim = new Ev();
 
             Console.WriteLine("Oda sayısı giriniz:");
-            evim.odasayisi = int.Parse(Console.ReadLine());
+            evim.Odasayisi = int.Parse(Console.ReadLine());
             Console.WriteLine("Kat no giriniz:");
             evim.katno = int.Parse(Console.ReadLine());
             Console.WriteLine("Alan giriniz:");
@@ -18,12 +18,20 @@ namespace Gazi.EmlakciAppSube2
             Console.WriteLine("Semt giriniz:");
             evim.semt=Console.ReadLine();
             Console.WriteLine(evim.EvBilgileri());
+
         }
     }
 
     class Ev
     {
-        public int odasayisi;//field
+        private int odasayisi;
+
+        public int Odasayisi
+        {
+            get { return odasayisi; }
+            set { odasayisi = value; }
+        }
+
         public int katno;
         public string semt;
         public double alan;
