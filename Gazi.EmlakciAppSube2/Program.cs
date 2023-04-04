@@ -7,6 +7,7 @@ namespace Gazi.EmlakciAppSube2
     {
         static void Main(string[] args)
         {
+
             var evim = new Ev(-3, 2, "Gazi", 120);
             Console.WriteLine(evim.EvBilgileri());
 
