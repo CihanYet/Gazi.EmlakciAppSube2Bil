@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gazi.EmlakciLibSube2;
+using System;
 using System.Runtime.InteropServices;
 
 namespace Gazi.EmlakciAppSube2
@@ -7,64 +8,57 @@ namespace Gazi.EmlakciAppSube2
     {
         static void Main(string[] args)
         {
-
-            var evim = new Ev(-3, 2, "Gazi", 120);
-            Console.WriteLine(evim.EvBilgileri());
-
-            var evim2 = new Ev();
-            Console.WriteLine(evim2.EvBilgileri());
-
-            var evim3 = new Ev();
+            var se = new SatilikEv();
+            se.Alan = 120;
+            se.Satisfiyat = 10000;
+            se.Odasayisi = 3;
+            se.Katno = 1;
+            se.Semt = "Satilik Ev";
            
-            Console.WriteLine(Ev.Sayac);
+            var ke = new KiralikEv();
+            ke.Alan = 100;
+            ke.Semt = "Kiralik Ev";
+            ke.Kira = 500;
+            ke.Depozito = 500;
+            ke.Odasayisi = 3;
+            ke.Katno = 2;
+
+
+            Ev[] evler = new Ev[2];
+            evler[0] = se;
+            evler[1] = ke;
+
+            for (int i = 0; i < evler.Length; i++)
+            {
+                Console.WriteLine(evler[i].EvBilgileri());
+                Console.WriteLine("------------------------");
+            }
+            //Döngü her döndüğünde gelen evin tipini tespit ederek, kiralik yada satılık ev classındaki ev bilgileri metodunu çağırmaya çalışalım.
+
+
+
+
+           
+
         }
     }
-
-    class Ev
-    {
-        private static int sayac = 0;
-        public static int Sayac { get => sayac;}
-        public Ev()
-        {
-            sayac++;
-        }
-        public Ev(int odasayisi, int katno, string semt, double alan)
-        {
-            this.Odasayisi = odasayisi;
-            this.Katno = katno;
-            this.Alan = alan;
-            this.Semt = semt;
-            sayac++;
-        }
-
-        public Ev(int odasayisi, int katno, double alan)
-        {
-            this.Odasayisi = odasayisi;
-            this.Katno = katno;
-            this.Alan = alan;
-            this.Semt = "Gazi";
-            sayac++;
-        }
-
-        private int odasayisi;
-
-        public int Odasayisi
-        {
-            get { return odasayisi; }
-            set { odasayisi = Math.Abs(value); }
-        }
-
-        public int Katno { get => katno; set => katno = value; }
-
-        private int katno;
-        private string semt;
-        public double Alan { get; set; }
-        public string Semt { get => semt; set => semt = value; }
-       
-
-        public string EvBilgileri() => $"Alan:{this.Alan}\nOda Sayısı:{this.odasayisi}\nKat no:{this.Katno}\nSemt:{this.Semt}";
-    }
+    
 }
+
+//Name Hiding(İsim Gizleme): Türeyen classlarlarda base classtaki bir üye ile aynı isimde üye tanımlaması yapılırsa, türeyen class referansı ile base classtaki üyeye artık erişilemez. Kısaca, türeyen classtaki üye, base classtaki üyeyi gizler.
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Class: Nesnelerin sahip olması gereken özelliklerin ve eylemlerin tanımlandığı kod bloklarıdır. Classlar aynı zamanda bir veri tipidir. Referans tipi veri tiplerindendir.
 //private: Gizli anlamına gelir. Private üyelere sadece içinde bulunduğu class tarafından erişilebilir.
 //public: Public üyelere, içinde bulunduğu class dışından da erişilebilir.

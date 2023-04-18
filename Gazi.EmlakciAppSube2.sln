@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gazi.EmlakciAppSube2", "Gazi.EmlakciAppSube2\Gazi.EmlakciAppSube2.csproj", "{76BEBAF2-994B-40D6-B8C1-02DB165F593C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gazi.EmlakciAppSube2", "Gazi.EmlakciAppSube2\Gazi.EmlakciAppSube2.csproj", "{76BEBAF2-994B-40D6-B8C1-02DB165F593C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gazi.EmlakciLibSube2", "Gazi.EmlakciLibSube2\Gazi.EmlakciLibSube2.csproj", "{B113F908-4900-41F4-891B-A92025B36BDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{76BEBAF2-994B-40D6-B8C1-02DB165F593C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76BEBAF2-994B-40D6-B8C1-02DB165F593C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76BEBAF2-994B-40D6-B8C1-02DB165F593C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B113F908-4900-41F4-891B-A92025B36BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B113F908-4900-41F4-891B-A92025B36BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B113F908-4900-41F4-891B-A92025B36BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B113F908-4900-41F4-891B-A92025B36BDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,4 +5,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Gazi.EmlakciLibSube2\Gazi.EmlakciLibSube2.csproj" />
+  </ItemGroup>
+
 </Project>
