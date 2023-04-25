@@ -42,8 +42,8 @@ namespace Gazi.EmlakciLibSube2
         private int katno;
         private string semt;
         public double Alan { get; set; }
-        public string Semt { get => semt; set => semt = value; }       
+        public string Semt { get => semt; set => semt = value; }        
 
-        public string EvBilgileri() => $"Alan:{this.Alan}\nOda Sayısı:{this.odasayisi}\nKat no:{this.Katno}\nSemt:{this.Semt}";
+        public virtual string EvBilgileri() => $"Alan:{this.Alan}\nOda Sayısı:{this.odasayisi}\nKat no:{this.Katno}\nSemt:{this.Semt}";
     }
 }

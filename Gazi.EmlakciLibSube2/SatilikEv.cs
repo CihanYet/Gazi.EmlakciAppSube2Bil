@@ -8,6 +8,11 @@ namespace Gazi.EmlakciLibSube2
     {
         public double Satisfiyat { get; set; }
 
-        public new string EvBilgileri() => $"{base.EvBilgileri()}\nSatış Fiyatı:{this.Satisfiyat}";
+        // public new string EvBilgileri() => $"{base.EvBilgileri()}\nSatış Fiyatı:{this.Satisfiyat}";
+
+        public override string EvBilgileri()
+        {
+            return $"{base.EvBilgileri()}\nSatış Fiyatı:{this.Satisfiyat}";
+        }
     }
 }
