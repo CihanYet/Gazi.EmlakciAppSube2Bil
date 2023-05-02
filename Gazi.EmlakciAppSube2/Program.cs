@@ -14,6 +14,7 @@ namespace Gazi.EmlakciAppSube2
             se.Odasayisi = 3;
             se.Katno = 1;
             se.Semt = "Satilik Ev";
+            Console.WriteLine(se.ToString());
 
 
 
@@ -25,6 +26,7 @@ namespace Gazi.EmlakciAppSube2
             ke.Odasayisi = 3;
             ke.Katno = 2;
 
+            var ke2 = new KiralikEv(3, 2, "Kiralik Ev", 150, 800, 900);
 
             Ev[] evler = new Ev[2];
             evler[0] = se;
@@ -45,41 +47,50 @@ namespace Gazi.EmlakciAppSube2
             //    Console.WriteLine("------------------------");
             //}
 
-            for (int i = 0; i < evler.Length; i++)
-            {
-                Console.WriteLine(evler[i].EvBilgileri());
-                Console.WriteLine("------------------------");
-            }
+            //for (int i = 0; i < evler.Length; i++)
+            //{
+            //    Console.WriteLine(evler[i].EvBilgileri());
+            //    Console.WriteLine("------------------------");
+            //}
 
 
-            //Döngü her döndüğünde gelen evin tipini tespit ederek, kiralik yada satılık ev classındaki ev bilgileri metodunu çağırmaya çalışalım.
+
+            //Animal animal;
+
+            //animal = new Cat();
+            //Console.WriteLine(animal.Sound());
+
+            //animal = new Dog();
+            //Console.WriteLine(animal.Sound());          
 
         }
+
+
     }
 
 
     class Animal
     {
-        public virtual void Sound()
+        public virtual string Sound()
         {
-
+            return "Animal classındaki ses işlemleri yapıldı.";
         }
     }
 
     class Cat : Animal
     {
-        public override void Sound()
+        public override string Sound()
         {
-            base.Sound();
+            return $"{base.Sound()} Miyav sesi oluştu";
             //Kedi ile ilgili ses işlemleri
         }
     }
 
     class Dog : Animal
     {
-        public override void Sound()
+        public override string Sound()
         {
-            base.Sound();
+            return $"{base.Sound()} Hav Hav sesi oluştu";
             //Köpek ile ilgili ses işlemleri
         }
     }

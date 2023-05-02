@@ -1,15 +1,19 @@
 ﻿using System;
-
+//public private internal protected sealed
 namespace Gazi.EmlakciLibSube2
 {
-    public class Ev
+    public sealed class Ev
     {
+        protected int sayi;
+
         private static int sayac = 0;
         public static int Sayac { get => sayac; }
+
+
         public Ev()
         {
             sayac++;
-            
+
         }
         public Ev(int odasayisi, int katno, string semt, double alan)
         {
@@ -42,8 +46,11 @@ namespace Gazi.EmlakciLibSube2
         private int katno;
         private string semt;
         public double Alan { get; set; }
-        public string Semt { get => semt; set => semt = value; }        
+        public string Semt { get => semt; set => semt = value; }
 
-        public virtual string EvBilgileri() => $"Alan:{this.Alan}\nOda Sayısı:{this.odasayisi}\nKat no:{this.Katno}\nSemt:{this.Semt}";
+        public override string ToString()
+        {
+            return $"Alan:{this.Alan}\nOda Sayısı:{this.odasayisi}\nKat no:{this.Katno}\nSemt:{this.Semt}";
+        }
     }
 }
