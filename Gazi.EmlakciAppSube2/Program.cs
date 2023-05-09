@@ -14,6 +14,7 @@ namespace Gazi.EmlakciAppSube2
             se.Odasayisi = 3;
             se.Katno = 1;
             se.Semt = "Satilik Ev";
+            
             Console.WriteLine(se.ToString());
 
 
@@ -31,6 +32,7 @@ namespace Gazi.EmlakciAppSube2
             Ev[] evler = new Ev[2];
             evler[0] = se;
             evler[1] = ke;
+
 
             //for (int i = 0; i < evler.Length; i++)
             //{

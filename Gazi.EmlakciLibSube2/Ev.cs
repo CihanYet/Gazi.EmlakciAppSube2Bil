@@ -2,9 +2,9 @@
 //public private internal protected sealed
 namespace Gazi.EmlakciLibSube2
 {
-    public sealed class Ev
+    public class Ev
     {
-        protected int sayi;
+        internal int sayi;
 
         private static int sayac = 0;
         public static int Sayac { get => sayac; }

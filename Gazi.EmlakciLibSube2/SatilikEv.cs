@@ -8,7 +8,7 @@ namespace Gazi.EmlakciLibSube2
     {
         public SatilikEv()
         {
-
+            
         }
 
         public SatilikEv(int odasayisi,int katno,string semt,double alan,double satisfiyat):base(odasayisi,katno,semt,alan)
