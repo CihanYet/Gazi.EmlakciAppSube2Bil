@@ -33,6 +33,14 @@ namespace Gazi.EmlakciLibSube2
             sayac++;
         }
 
+        ~Ev()
+        {
+            //Destructor-Yıkıcı Metod
+            //Classtan türetilen nesne bellekten atılırken çalışır.
+            //.NET Managed Code-Garbage Collector-Bellekten nesneyi atması işlemine Dispose denir.
+            sayac--;
+        }
+
         private int odasayisi;
 
         public int Odasayisi

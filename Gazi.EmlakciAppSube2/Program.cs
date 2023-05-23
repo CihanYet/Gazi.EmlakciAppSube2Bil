@@ -1,5 +1,6 @@
 ﻿using Gazi.EmlakciLibSube2;
 using System;
+using System.IO;
 using System.Runtime.InteropServices;
 
 namespace Gazi.EmlakciAppSube2
@@ -14,10 +15,6 @@ namespace Gazi.EmlakciAppSube2
             se.Odasayisi = 3;
             se.Katno = 1;
             se.Semt = "Satilik Ev";
-            
-            Console.WriteLine(se.ToString());
-
-
 
             var ke = new KiralikEv();
             ke.Alan = 100;
@@ -27,11 +24,63 @@ namespace Gazi.EmlakciAppSube2
             ke.Odasayisi = 3;
             ke.Katno = 2;
 
-            var ke2 = new KiralikEv(3, 2, "Kiralik Ev", 150, 800, 900);
 
-            Ev[] evler = new Ev[2];
-            evler[0] = se;
-            evler[1] = ke;
+            FileStream fs = null;
+            StreamWriter sw = null;
+            try
+            {
+                //----
+                FileMode mod;
+                if (File.Exists(@"D:\Evler.txt"))
+                {
+                    mod = FileMode.Append;
+                }
+                else
+                {
+                    mod = FileMode.CreateNew;
+                }
+
+
+                using (fs = new FileStream(@"D:\Evler.txt", mod))
+                {
+                    using (sw = new StreamWriter(fs))
+                    {
+                        sw.WriteLine(ke.ToString());
+                        fs.Flush();
+                        sw.Close();
+                        fs.Close();
+                    }
+                }
+
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Console.WriteLine("Dosya işleminde hata oluştu!");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Hata oluştu!!");
+            }
+            finally
+            {
+                //if (sw != null && fs != null)//Null Check
+                //{
+                //    sw.Dispose();
+                //    fs.Dispose();
+                //}
+            }
+
+
+
+
+
+
+            //var ke2 = new KiralikEv(3, 2, "Kiralik Ev", 150, 800, 900);
+
+            //Ev[] evler = new Ev[2];
+            //evler[0] = se;
+            //evler[1] = ke;
 
 
             //for (int i = 0; i < evler.Length; i++)

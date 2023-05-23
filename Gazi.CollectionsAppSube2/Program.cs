@@ -42,11 +42,12 @@ namespace Gazi.CollectionsAppSube2
             lst.Add(20);
             lst.Capacity = lst.Count;
             Console.WriteLine(lst[0] + lst[1]);
+            
         }
     }
 
-    class Test<T, U> where T : class
-                    where U : struct
+    class Test<T, U> where T : class//Heap-string,Ev- Referans tipi
+                    where U : struct//Stack-int,byte,double,float....Değer tipi
     {
         public T veri1;
         public U veri2;
